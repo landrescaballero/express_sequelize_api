@@ -1,9 +1,12 @@
 import app from "./app/app";
-import { config } from "./config";
+import sequelize from "./db";
+import Config from "./config";
 
-const { port } = config;
+const { port } = Config;
+
 
 console.log("starting server...");
+sequelize;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
