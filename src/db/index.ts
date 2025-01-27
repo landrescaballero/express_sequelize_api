@@ -9,7 +9,7 @@ const {
     portDB,
 } = Config;
 
-const sequelize = new Sequelize({
+const db = new Sequelize({
     database: nameDB,
     username: userDB,
     password: passwordDB,
@@ -31,10 +31,10 @@ const sequelize = new Sequelize({
 
 async function syncDB() {
     console.log("Syncing database...");
-    await sequelize.sync();
+    await db.sync();
     console.log("Database synced");
 }
 
 syncDB();
 
-export default sequelize;
+export default db;
